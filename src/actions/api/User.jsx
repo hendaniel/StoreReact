@@ -1,5 +1,12 @@
 import * as API from "../../API";
-import * as Helper from "./api/Helper";
+import * as Helper from "./Helper";
+
+const requestHeaders = {
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${API.AUTH_TOKEN}`,
+  },
+};
 
 export const getUser = () => {
   return (dispatch) => {
@@ -7,7 +14,7 @@ export const getUser = () => {
 
     dispatch(Helper.loadingInProgress(true));
 
-    fetch(API.USER)
+    fetch(API.USER, requestHeaders)
       .then((response) => {
         if (!response.ok) {
           throw Error(response.statusText);

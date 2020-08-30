@@ -1,5 +1,5 @@
 import * as API from "../../API";
-import * as Helper from "./api/Helper";
+import * as Helper from "./Helper";
 
 export const getProducts = () => {
   return (dispatch) => {
