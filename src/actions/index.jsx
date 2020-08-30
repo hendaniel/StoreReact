@@ -1,5 +1,6 @@
 import * as API from "../API";
 
+
 export const loadingError = (bool) => ({
   type: "LOADING_ERROR",
   hasErrored: bool,
