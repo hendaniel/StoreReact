@@ -1,0 +1,1 @@
+export const PRODUCTS = 'https://coding-challenge-api.aerolab.co/products';
