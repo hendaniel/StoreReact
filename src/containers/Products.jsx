@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { getProducts } from "../actions/api/Products";
-import UserPanel from "../components/UserPanel";
+import ProductsList from "../components/ProductsList";
 
 const mapStateToProps = (state) => ({
   products: state.products,
@@ -9,6 +9,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchProducts: (value) => dispatch(getProducts()),
+  fetchProducts: () => dispatch(getProducts()),
 });
-export default connect(mapStateToProps, mapDispatchToProps)(UserPanel);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsList);

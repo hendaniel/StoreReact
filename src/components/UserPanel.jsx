@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 
-const UserPanel = ({user}) => {
+const UserPanel = ({ user, fetchUser }) => {
   useEffect(() => {
-    console.log("Hola");
-    user();
+    fetchUser();
   }, []);
-  return <div></div>;
+
+  return <div>{user.name}</div>;
 };
 export default UserPanel;

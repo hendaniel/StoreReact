@@ -19,14 +19,13 @@ export const getUser = () => {
         if (!response.ok) {
           throw Error(response.statusText);
         }
-
+        
         dispatch(Helper.loadingInProgress(false));
 
         return response;
       })
       .then((response) => response.json())
       .then((json) => {
-        json = json.slice(0, 10);
         dispatch(Helper.loadingSuccess(json));
       })
       .catch(() => dispatch(Helper.loadingError(true)));

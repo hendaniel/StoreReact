@@ -8,7 +8,7 @@ export const loadingInProgress = (bool) => ({
   isLoading: bool,
 });
 
-export const loadingSuccess = (products) => ({
+export const loadingSuccess = (data) => ({
   type: "LOADING_SUCCESS",
-  products,
+  data,
 });

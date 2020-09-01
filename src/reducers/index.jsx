@@ -21,9 +21,16 @@ const loadingInProgress = (state = false, action) => {
 const products = (state = [], action) => {
   switch (action.type) {
     case "LOADING_SUCCESS":
-      return action.news;
-    case "CLEAR_NEWS":
-      return [];
+      return action.data;
+    default:
+      return state;
+  }
+};
+
+const user = (state = [], action) => {
+  switch (action.type) {
+    case "LOADING_SUCCESS":
+      return action.data;
     default:
       return state;
   }
@@ -31,6 +38,7 @@ const products = (state = [], action) => {
 
 export default combineReducers({
   products,
+  user,
   loadingError,
   loadingInProgress,
 });

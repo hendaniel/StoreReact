@@ -9,6 +9,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchUser: (value) => dispatch(getUser()),
+  fetchUser: () => dispatch(getUser()),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(UserPanel);
