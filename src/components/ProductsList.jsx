@@ -7,13 +7,11 @@ const ProductsList = ({ products, fetchProducts }) => {
     fetchProducts();
   }, []);
 
-  if (!products) {
-    console.log(products);
-    return <div></div>;
-  }
+  const { next, prev, jump, currentData } = usePagination(products, 10);
+
   return (
     <div className="cards">
-      {products.map((item) => {
+      {currentData().map((item) => {
         return <Product item={item}></Product>;
       })}
     </div>

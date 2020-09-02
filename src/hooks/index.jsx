@@ -22,5 +22,6 @@ export const usePagination = (data, itemsPerPage) => {
     const end = begin + itemsPerPage;
     return data.slice(begin, end);
   };
-};
 
+  return { next, prev, jump, currentData, currentPage, maxPage };
+};
