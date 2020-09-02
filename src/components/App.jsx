@@ -4,10 +4,10 @@ import Products from "../containers/Products";
 
 function App() {
   return (
-    <div className="App">
-      <User></User>
-      <Products></Products>
-    </div>
+    <>
+      <User />
+      <Products />
+    </>
   );
 }
 
