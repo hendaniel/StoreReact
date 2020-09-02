@@ -26,8 +26,14 @@ export const getProducts = () => {
       })
       .then((response) => response.json())
       .then((json) => {
-        dispatch(Helper.loadingSuccess(json));
+        dispatch(loadingSuccess(json));
       })
       .catch(() => dispatch(Helper.loadingError(true)));
   };
 };
+
+const loadingSuccess = (data) => ({
+  type: "LOADING_SUCCESS",
+  name: "PRODUCTS",
+  data,
+});

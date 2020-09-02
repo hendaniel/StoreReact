@@ -6,10 +6,16 @@ const ProductsList = ({ products, fetchProducts }) => {
     fetchProducts();
   }, []);
 
-  const productMap = products.map(item => {
-    return <Product item={item}></Product>
-  })
-
-return <div>{productMap}</div>;
+  if(!products){
+    console.log(products);
+    return <div></div>
+  }
+  return (
+    <div className="cards">
+      {products.map((item) => {
+        return <Product item={item}></Product>;
+      })}
+    </div>
+  );
 };
 export default ProductsList;

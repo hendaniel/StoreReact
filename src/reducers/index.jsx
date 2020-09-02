@@ -18,7 +18,7 @@ const loadingInProgress = (state = false, action) => {
   }
 };
 
-const products = (state = [], action) => {
+const data = (state = [], action) => {
   switch (action.type) {
     case "LOADING_SUCCESS":
       return action.data;
@@ -27,18 +27,19 @@ const products = (state = [], action) => {
   }
 };
 
-const user = (state = [], action) => {
-  switch (action.type) {
-    case "LOADING_SUCCESS":
-      return action.data;
-    default:
-      return state;
-  }
+const createDataWrapperReducer = (reducerFunction, reducerName) => {
+  return (state, action) => {
+    const { name } = action;
+    const isInitializationCall = state === undefined;
+    if (name !== reducerName && !isInitializationCall) return state;
+
+    return reducerFunction(state, action);
+  };
 };
 
 export default combineReducers({
-  products,
-  user,
+  user: createDataWrapperReducer(data, "USER"),
+  products: createDataWrapperReducer(data, "PRODUCTS"),
   loadingError,
   loadingInProgress,
 });
