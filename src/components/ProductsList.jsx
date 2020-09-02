@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { usePagination } from "../hooks/index";
 import Product from "./Product";
 
 const ProductsList = ({ products, fetchProducts }) => {
@@ -6,9 +7,9 @@ const ProductsList = ({ products, fetchProducts }) => {
     fetchProducts();
   }, []);
 
-  if(!products){
+  if (!products) {
     console.log(products);
-    return <div></div>
+    return <div></div>;
   }
   return (
     <div className="cards">
