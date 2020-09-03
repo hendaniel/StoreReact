@@ -1,4 +1,5 @@
 import React from "react";
+import coin from "../assets/coin.svg";
 
 const Product = ({
   item: {
@@ -15,7 +16,11 @@ const Product = ({
         <span className="category">{category}</span>
         <h3 className="title">{name}</h3>
       </div>
-      <button className="card-action">Te faltan: {cost}</button>
+
+      <div className="coins-left">
+        <button className="card-action">You need: {cost}</button>
+        <img src={coin} alt="Coins left" />
+      </div>
     </div>
   );
 };
