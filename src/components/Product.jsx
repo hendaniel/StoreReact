@@ -15,6 +15,7 @@ const Product = ({
         <span className="category">{category}</span>
         <h3 className="title">{name}</h3>
       </div>
+      <button className="card-action">Te faltan: {cost}</button>
     </div>
   );
 };
