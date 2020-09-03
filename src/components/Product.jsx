@@ -18,7 +18,7 @@ const Product = ({
       </div>
 
       <div className="coins-left">
-        <button className="card-action">You need: {cost}</button>
+        <span>You need: {cost}</span>
         <img src={coin} alt="Coins left" />
       </div>
     </div>

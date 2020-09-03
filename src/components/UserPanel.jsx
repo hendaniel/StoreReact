@@ -10,8 +10,8 @@ const UserPanel = ({ user: { name, points, redeemHistory }, fetchUser }) => {
     <div className="user-panel">
       <div>{name}</div>
       <div className="coins-user">
-        <span className="points">{points}</span>
         <img src={coin} alt="Coins" />
+        <span className="points">{points}</span>
       </div>
     </div>
   );

@@ -66,28 +66,10 @@ body {
   letter-spacing: 2px;
   font-weight: 500;
   color: #868686;
-
-  .coins-user {
-    opacity: 0.8;
-    background: #929292;
-    border-radius: 100px;
-    width: 160px;
-    height: 42px;
-    color: white;
-    display: flex;
-    max-width: 170px;
-    margin-left: 15%;
-    margin-right: 15%;
-    justify-content: center;
-    span {
-      margin-right: 5px;
-      color: white;
-    }
-  }
 }
 
 .cards {
-  margin: 0 80px;
+  margin: 0 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -97,7 +79,7 @@ body {
 }
 
 .card {
-  margin: 30px 50px;
+  margin: 30px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
   background-color: #fff;
   width: 250px;
@@ -152,6 +134,7 @@ body {
 
 .pagination {
   padding: 15px 0;
+  margin: 20px;
 }
 
 .pagination ul {
@@ -161,6 +144,7 @@ body {
 }
 
 .pagination button {
+  margin: 20px;
   background-color: turquoise;
   display: inline-block;
   padding: 10px 18px;
@@ -175,16 +159,28 @@ body {
   border-radius: 100px;
   width: 160px;
   height: 42px;
-  color: white;
   display: flex;
   max-width: 170px;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 18%;
+  margin-right: 18%;
   justify-content: center;
-  button {
+  span {
     margin-right: 5px;
-    border: none;
-    background-color: transparent;
     color: white;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+.coins-user {
+  margin-right: 10px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  background-color: #ededed;
+  width: 110px;
+  span {
+    display: inline-flex;
+    align-items: center;
+    color: gray;
   }
 }
