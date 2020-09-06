@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Codystar:300&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,13 +22,13 @@ body {
   justify-self: center;
   background-color: rgb(36, 36, 36);
   h1 {
-    font-family: "Codystar";
+    font-family: "Sacramento", cursive;
     font-size: 7rem;
     text-align: center;
     font-weight: bold;
-    -webkit-animation: glow 2s ease-in-out infinite alternate;
-    -moz-animation: glow 2s ease-in-out infinite alternate;
-    animation: glow 2s ease-in-out infinite alternate;
+    -webkit-animation: blink 6s infinite;
+    -moz-animation: blink 12s infinite;
+    animation: blink 12s infinite;
   }
   @media screen and (max-width: 600px) {
     h1 {
@@ -36,19 +36,50 @@ body {
     }
   }
 }
-@keyframes glow {
-  from {
-    color: #fff;
+
+@-webkit-keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
     text-shadow: 0 0 10px #00fff2, 0 0 20px #00fff2, 0 0 30px #00fff2,
       0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2,
       0 0 90px #00fff2;
+    color: #fff6a9;
+  }
+}
+
+@keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
   }
 
-  to {
-    color: gray;
-    text-shadow: 0 0 20px #00fff2, 0 0 30px #00fff2, 0 0 40px #00fff2,
-      0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2, 0 0 80px #00fff2,
-      0 1 90px #00fff2;
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 10px #00fff2, 0 0 20px #00fff2, 0 0 30px #00fff2,
+      0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2,
+      0 0 90px #00fff2;
+    color: #fff6a9;
   }
 }
 
