@@ -1,9 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { UserContext } from "../../providers/index";
 import { coin, buy } from "../../assets/index";
-import { SuccessModal, FailureModal } from "../Modals/index";
+import { SuccessModal, FailureModal, CoinsModal } from "../Modals/index";
 import { useModal } from "../../hooks/index";
 import { redeemProduct } from "../../services/productsService";
+
 import "./products.scss";
 
 const Product = ({
@@ -21,31 +22,40 @@ const Product = ({
     if (!user) return;
   }, [user]);
 
-  const [error, setError] = useState(false);
+  const [errorModal, toggleErrorModal] = useModal();
 
-  const { isShowing, toggle } = useModal();
+  const [successModal, toggleSuccessModal] = useModal();
+
+  const [coinsModal, toggleCoinsModal] = useModal();
 
   const { points } = user;
 
-  const canBuy = cost <= points;
+  const canBuy = cost >= points;
 
-  const showModal = () => {
+  const showResponseModal = () => {
     redeemProduct(_id)
       .then((res) => {
-        toggle();
+        toggleSuccessModal();
       })
       .catch((err) => {
-        setError(true);
-        toggle();
+        toggleErrorModal();
       });
+  };
+
+  const showCoinsModal = () => {
+    toggleCoinsModal();
   };
 
   return (
     <div className="card">
-      {error ? (
-        <FailureModal isShowing={isShowing} hide={toggle} />
-      ) : (
-        <SuccessModal isShowing={isShowing} hide={toggle} />
+      {coinsModal && (
+        <CoinsModal isShowing={coinsModal} hide={toggleCoinsModal} />
+      )}
+      {errorModal && (
+        <FailureModal isShowing={errorModal} hide={toggleErrorModal} />
+      )}
+      {successModal && (
+        <SuccessModal isShowing={successModal} hide={toggleSuccessModal} />
       )}
 
       <div className="img" style={{ backgroundImage: `url("${url}")` }}></div>
@@ -62,7 +72,7 @@ const Product = ({
             <div className="action">
               <h3>{cost}</h3>
               <img src={coin} alt="coin" />
-              <button onClick={showModal}>Redeem now</button>
+              <button onClick={showResponseModal}>Redeem now</button>
             </div>
           </div>
         </>
@@ -79,7 +89,7 @@ const Product = ({
             <div className="action">
               <h3>{cost - (points | 0)}</h3>
               <img src={coin} alt="coin" />
-              <button>Get more coins</button>
+              <button onClick={showCoinsModal}>Get more coins</button>
             </div>
           </div>
         </>
