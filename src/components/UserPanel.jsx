@@ -1,11 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import coin from "../assets/coin.svg";
+import { UserContext } from "../providers/UserProvider";
 
-const UserPanel = ({ user: { name, points, redeemHistory }, fetchUser }) => {
+const UserPanel = () => {
+  const user = React.useContext(UserContext);
+
   useEffect(() => {
-    fetchUser();
-  }, []);
+    if (!user) return;
+  }, [user]);
 
+  const { name, points } = user;
   return (
     <div className="user-panel">
       <div>{name}</div>

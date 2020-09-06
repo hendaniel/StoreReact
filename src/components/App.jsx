@@ -1,15 +1,17 @@
 import React from "react";
-import User from "../containers/User";
-import Products from "../containers/Products";
+import User from "../context/User";
+import Products from "../context/Products";
 import Banner from "./Banner";
+import UserPanel from "./UserPanel";
+import UserProvider from "../providers/UserProvider";
 
 function App() {
   return (
-    <>
-      <User />
-      <Banner/>
+    <UserProvider>
+      <UserPanel />
+      <Banner />
       <Products />
-    </>
+    </UserProvider>
   );
 }
 
