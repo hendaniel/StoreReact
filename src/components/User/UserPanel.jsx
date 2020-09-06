@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import coin from "../../assets/coin.svg";
+import { coin } from "../../assets/index";
 import { UserContext } from "../../providers/UserProvider";
 import "./user.scss";
 

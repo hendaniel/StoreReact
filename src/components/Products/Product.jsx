@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { UserContext } from "../../providers/index";
-import coin from "../../assets/coin.svg";
-import buy from "../../assets/buy-blue.svg";
+import { coin, buy } from "../../assets/index";
 import { SuccessModal } from "../Modals/index";
 import { useModal } from "../../hooks/index";
 import "./products.scss";
