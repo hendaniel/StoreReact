@@ -3,10 +3,12 @@ import { UserContext } from "../../providers/index";
 import { coin, buy } from "../../assets/index";
 import { SuccessModal, FailureModal } from "../Modals/index";
 import { useModal } from "../../hooks/index";
+import { redeemProduct } from "../../services/productsService";
 import "./products.scss";
 
 const Product = ({
   item: {
+    _id,
     name,
     category,
     cost,
@@ -26,7 +28,10 @@ const Product = ({
   const canBuy = cost <= points;
 
   const openBuyModal = () => {
-    toggle();
+    redeemProduct(_id).then((res) => {
+      // toggle();
+      console.log(res);
+    });
   };
 
   return (
@@ -55,7 +60,7 @@ const Product = ({
       ) : (
         <>
           <div className="coins-left">
-            <span>You need: {cost - points}</span>
+            <span>You need: {cost - (points | 0)}</span>
             <img src={coin} alt="coins left" />
           </div>
           <div
@@ -63,7 +68,7 @@ const Product = ({
             style={{ backgroundColor: "#92a2a7da" }}
           >
             <div className="action">
-              <h3>{cost - points}</h3>
+              <h3>{cost - (points | 0)}</h3>
               <img src={coin} alt="coin" />
               <button>Get more coins</button>
             </div>

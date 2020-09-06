@@ -1,15 +1,13 @@
 import * as API from "../api/API";
 
-const requestHeaders = {
-  headers: {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${API.AUTH_TOKEN}`,
-  },
+const headers = {
+  "Content-Type": "application/json",
+  Authorization: `Bearer ${API.AUTH_TOKEN}`,
 };
 
 export const getProducts = async () => {
   try {
-    const response = await fetch(API.PRODUCTS, requestHeaders);
+    const response = await fetch(API.PRODUCTS, { headers });
     const json = await response.json();
     return json;
   } catch (error) {
@@ -22,11 +20,12 @@ export const redeemProduct = async (id) => {
     const response = await fetch(API.REDEEEM, {
       method: "POST",
       body: { productId: id },
-      requestHeaders,
+      headers,
     });
     const json = await response.json();
     return json;
   } catch (error) {
+    console.log("errrooor", error);
     return alert(JSON.stringify(error));
   }
 };
