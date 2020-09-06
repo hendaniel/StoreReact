@@ -16,7 +16,7 @@ const CoinsModal = ({ isShowing, hide }) =>
             role="dialog"
           >
             <div className="modal">
-              <div className="modal-header success-header">
+              <div className="modal-header coins-header">
                 <button
                   type="button"
                   className="modal-close-button"
@@ -28,11 +28,21 @@ const CoinsModal = ({ isShowing, hide }) =>
                 </button>
               </div>
               <div className="content">
-                <img className="gif" src={success} alt="error" />
-                <div className="success">
-                  <h1>SUCCESS!</h1>
-                  <span>Everything went ok!, enjoy your coins</span>
-                </div>
+                <form className="coins-form">
+                  <div>
+                    <input type="radio" name="choice" value={1000} />
+                    <label>1000</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="choice" value={5000} />
+                    <label>5000</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="choice" value={7500} />
+                    <label>7500</label>
+                  </div>
+                  <button>Get Coins!</button>
+                </form>
               </div>
             </div>
           </div>

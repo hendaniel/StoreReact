@@ -43,6 +43,9 @@
 .success-header {
   background: #43a764;
 }
+.coins-header {
+  background: #c7aa0a;
+}
 
 .modal-close-button {
   font-size: 1.4rem;
@@ -84,5 +87,22 @@ button {
     align-self: center;
     max-width: 200px;
     margin: 20px;
+  }
+}
+
+.coins-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  input {
+    margin: 10px;
+  }
+
+  label {
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #868686;
   }
 }
