@@ -19,7 +19,7 @@ export const addPoints = async (coins) => {
   try {
     const response = await fetch(API.ADD_POINTS, {
       method: "POST",
-      body: { amount: coins },
+      body: JSON.stringify({ amount: coins }),
       headers,
     });
     const json = await response.json();

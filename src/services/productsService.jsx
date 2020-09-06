@@ -17,15 +17,17 @@ export const getProducts = async () => {
 
 export const redeemProduct = async (id) => {
   try {
+    console.log(id);
     const response = await fetch(API.REDEEEM, {
-      method: "POST",
-      body: { productId: id },
       headers,
+      method: "POST",
+      body: JSON.stringify({ productId: id }),
     });
+    console.log("request", response);
     const json = await response.json();
     return json;
   } catch (error) {
-    console.log("errrooor", error);
+    console.log("Error", error);
     return alert(JSON.stringify(error));
   }
 };
