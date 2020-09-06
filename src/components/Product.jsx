@@ -19,7 +19,7 @@ const Product = ({
 
   const { points } = user;
 
-  const canBuy = cost >= points;
+  const canBuy = cost <= points;
 
   return (
     <div className="card">
