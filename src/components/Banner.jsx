@@ -1,5 +1,4 @@
 import React from "react";
-import coin from "../assets/coin.svg";
 
 const Banner = () => {
   return (
