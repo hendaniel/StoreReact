@@ -17,3 +17,16 @@ export const getUser = async () => {
   }
 };
 
+export const addPoints = async (coins) => {
+  try {
+    const response = await fetch(API.ADD_POINTS, {
+      method: "POST",
+      body: { amount: coins },
+      requestHeaders,
+    });
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    return alert(JSON.stringify(error));
+  }
+};
