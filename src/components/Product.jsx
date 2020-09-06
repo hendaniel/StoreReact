@@ -21,6 +21,10 @@ const Product = ({
 
   const canBuy = cost <= points;
 
+  const openBuyModal = () => {
+    console.log("aca debe ir el modal");
+  };
+
   return (
     <div className="card">
       <div className="img" style={{ backgroundImage: `url("${url}")` }}></div>
@@ -37,7 +41,7 @@ const Product = ({
             <div className="action">
               <h3>{cost}</h3>
               <img src={coin} alt="coin" />
-              <button>Redeem now</button>
+              <button onClick={openBuyModal}>Redeem now</button>
             </div>
           </div>
         </>
