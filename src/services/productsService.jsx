@@ -16,3 +16,17 @@ export const getProducts = async () => {
     return alert(JSON.stringify(error));
   }
 };
+
+export const redeemProduct = async (id) => {
+  try {
+    const response = await fetch(API.REDEEEM, {
+      method: "POST",
+      body: { productId: id },
+      requestHeaders,
+    });
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    return alert(JSON.stringify(error));
+  }
+};

@@ -16,3 +16,4 @@ export const getUser = async () => {
     return alert(JSON.stringify(error));
   }
 };
+
