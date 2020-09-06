@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from "react";
-import coin from "../assets/coin.svg";
-import { UserContext } from "../providers/UserProvider";
+import coin from "../../assets/coin.svg";
+import { UserContext } from "../../providers/UserProvider";
+import "./user.scss";
 
 const UserPanel = () => {
   const user = useContext(UserContext);

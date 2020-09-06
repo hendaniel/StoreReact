@@ -1,7 +1,10 @@
 import React, { useContext, useEffect } from "react";
-import { UserContext } from "../providers/UserProvider";
-import coin from "../assets/coin.svg";
-import buy from "../assets/buy-blue.svg";
+import { UserContext } from "../../providers/UserProvider";
+import coin from "../../assets/coin.svg";
+import buy from "../../assets/buy-blue.svg";
+import { SuccessModal } from "../Modals/index";
+import { useModal } from "../../hooks/index";
+import "./products.scss";
 
 const Product = ({
   item: {
@@ -13,6 +16,8 @@ const Product = ({
 }) => {
   const user = useContext(UserContext);
 
+  const { isShowing, toggle } = useModal();
+
   useEffect(() => {
     if (!user) return;
   }, [user]);
@@ -22,11 +27,13 @@ const Product = ({
   const canBuy = cost <= points;
 
   const openBuyModal = () => {
-    console.log("aca debe ir el modal");
+    toggle();
   };
 
   return (
     <div className="card">
+      <SuccessModal isShowing={isShowing} />
+
       <div className="img" style={{ backgroundImage: `url("${url}")` }}></div>
       <div className="info">
         <span className="category">{category}</span>

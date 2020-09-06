@@ -1,7 +1,7 @@
 import React from "react";
-import Banner from "./components/Banner";
-import UserPanel from "./components/UserPanel";
-import ProductsList from "./components/ProductsList";
+import Banner from "./components/Banner/Banner";
+import UserPanel from "./components/User/UserPanel";
+import ProductsList from "./components/Products/ProductsList";
 import UserProvider from "./providers/UserProvider";
 import ProductsProvider from "./providers/ProductsProvider";
 

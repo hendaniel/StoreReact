@@ -1,0 +1,140 @@
+.cards {
+  margin: 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  @media screen and (max-width: 600px) {
+    margin: 0 30px;
+  }
+}
+.card {
+  margin: 30px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+  background-color: #fff;
+  width: 250px;
+  height: 300px;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+
+  .img {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 150px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  .info {
+    z-index: 2;
+    background-color: #fff;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 16px 24px 10px 24px;
+  }
+  .category {
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #868686;
+  }
+
+  .title {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family: "Roboto Slab", serif;
+  }
+  .coins-left {
+    opacity: 0.8;
+    background: #929292;
+    border-radius: 100px;
+    width: 160px;
+    height: 42px;
+    display: flex;
+    max-width: 170px;
+    margin-left: 18%;
+    margin-right: 18%;
+    justify-content: center;
+    span {
+      margin-right: 5px;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+
+  .can-buy {
+    display: flex;
+    justify-content: center;
+  }
+
+  .action-container {
+    display: none;
+    background-color: #18caf6da;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    opacity: 1;
+    transform: translateY(-273px);
+    border-radius: 12px;
+    .action {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      button {
+        outline: none;
+        margin: 10px;
+        flex-grow: 4;
+        border: none;
+        background-color: #ededed;
+        padding: 10px;
+        border-radius: 100px;
+        font-family: "Raleway", sans-serif;
+      }
+      h3 {
+        text-align: center;
+        color: white;
+      }
+    }
+  }
+
+  &:hover {
+    .action-container {
+      display: flex;
+    }
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.1, 1.1);
+  }
+}
+
+.container-pagination {
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+.pagination {
+  padding: 15px 0;
+  margin: 20px;
+}
+
+.pagination ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.pagination button {
+  margin: 20px;
+  background-color: #18c9f6;
+  display: inline-block;
+  padding: 10px 18px;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+}

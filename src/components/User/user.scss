@@ -1,0 +1,29 @@
+.user-panel {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #ffffff;
+  width: 100%;
+  height: 50px;
+  padding-right: 20px;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #868686;
+
+  .coins-user {
+    margin-right: 10px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    background-color: #ededed;
+    width: 110px;
+    span {
+      display: inline-flex;
+      align-items: center;
+      color: gray;
+    }
+  }
+}
