@@ -1,6 +1,7 @@
 import React from "react";
 import { createPortal } from "react-dom";
-import "."
+import "./modal.scss";
+import { success } from "../../assets/index";
 
 const SuccessModal = ({ isShowing, hide }) =>
   isShowing
@@ -15,7 +16,7 @@ const SuccessModal = ({ isShowing, hide }) =>
             role="dialog"
           >
             <div className="modal">
-              <div className="modal-header">
+              <div className="modal-header success-header">
                 <button
                   type="button"
                   className="modal-close-button"
@@ -26,7 +27,13 @@ const SuccessModal = ({ isShowing, hide }) =>
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <p>Hello, I'm a modal.</p>
+              <div className="content">
+                <img className="gif" src={success} alt="error" />
+                <div class="success">
+                  <h1>SUCCESS!</h1>
+                  <span>Everything went ok!, enjoy your product</span>
+                </div>
+              </div>
             </div>
           </div>
         </>,

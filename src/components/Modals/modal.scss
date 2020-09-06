@@ -19,21 +19,29 @@
   overflow-x: hidden;
   overflow-y: auto;
   outline: 0;
+  border-radius: 100px;
 }
 
 .modal {
   z-index: 100;
   background: white;
   position: relative;
-  margin: 1.75rem auto;
-  border-radius: 3px;
-  max-width: 500px;
-  padding: 2rem;
+  margin: 10% auto;
+  max-width: 400px;
 }
 
 .modal-header {
   display: flex;
   justify-content: flex-end;
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+}
+.error-header {
+  background: #e2525c;
+}
+.success-header {
+  background: #43a764;
 }
 
 .modal-close-button {
@@ -58,4 +66,24 @@ button {
 .button-default {
   background: #247ba0;
   color: #fff;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10%;
+
+  .error {
+    color: #e2525c;
+  }
+  .success {
+    color: #43a764;
+  }
+
+  .gif {
+    align-self: center;
+    max-width: 200px;
+    margin: 20px;
+  }
 }

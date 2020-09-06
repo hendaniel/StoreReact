@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { UserContext } from "../../providers/index";
 import { coin, buy } from "../../assets/index";
-import { SuccessModal } from "../Modals/index";
+EStiimport { SuccessModal, FailureModal } from "../Modals/index";
 import { useModal } from "../../hooks/index";
 import "./products.scss";
 
@@ -32,6 +32,7 @@ const Product = ({
   return (
     <div className="card">
       <SuccessModal isShowing={isShowing} hide={toggle} />
+      {/* <FailureModal isShowing={isShowing} hide={toggle} /> */}
 
       <div className="img" style={{ backgroundImage: `url("${url}")` }}></div>
       <div className="info">

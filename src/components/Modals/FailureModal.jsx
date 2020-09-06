@@ -1,5 +1,6 @@
 import React from "react";
 import { createPortal } from "react-dom";
+import { error } from "../../assets/index";
 
 const FailureModal = ({ isShowing, hide }) =>
   isShowing
@@ -14,7 +15,7 @@ const FailureModal = ({ isShowing, hide }) =>
             role="dialog"
           >
             <div className="modal">
-              <div className="modal-header">
+              <div className="modal-header error-header">
                 <button
                   type="button"
                   className="modal-close-button"
@@ -25,7 +26,13 @@ const FailureModal = ({ isShowing, hide }) =>
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <p>Hello, I'm a modal.</p>
+              <div className="content">
+                <img className="gif" src={error} alt="error" />
+                <div class="error">
+                  <h1>ERROR!</h1>
+                  <span>Something went wrong, try again</span>
+                </div>
+              </div>
             </div>
           </div>
         </>,
