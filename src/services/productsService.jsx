@@ -1,4 +1,4 @@
-import * as API from "../API";
+import * as API from "../api/API";
 
 const requestHeaders = {
   headers: {
