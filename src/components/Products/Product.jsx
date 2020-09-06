@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { UserContext } from "../../providers/UserProvider";
+import { UserContext } from "../../providers/index";
 import coin from "../../assets/coin.svg";
 import buy from "../../assets/buy-blue.svg";
 import { SuccessModal } from "../Modals/index";
@@ -32,7 +32,7 @@ const Product = ({
 
   return (
     <div className="card">
-      <SuccessModal isShowing={isShowing} />
+      <SuccessModal isShowing={isShowing} hide={toggle} />
 
       <div className="img" style={{ backgroundImage: `url("${url}")` }}></div>
       <div className="info">

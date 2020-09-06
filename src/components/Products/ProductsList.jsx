@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { usePagination } from "../../hooks/index";
 import Product from "./Product";
-import { ProductsContext } from "../../providers/ProductsProvider";
+import { ProductsContext } from "../../providers/index";
 import "./products.scss";
 
 const ProductsList = () => {
