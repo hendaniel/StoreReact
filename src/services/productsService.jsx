@@ -7,9 +7,9 @@ const requestHeaders = {
   },
 };
 
-export const getUser = async () => {
+export const getProducts = async () => {
   try {
-    const response = await fetch(API.USER, requestHeaders);
+    const response = await fetch(API.PRODUCTS, requestHeaders);
     const json = await response.json();
     return json;
   } catch (error) {

@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import coin from "../assets/coin.svg";
 import { UserContext } from "../providers/UserProvider";
 
 const UserPanel = () => {
-  const user = React.useContext(UserContext);
+  const user = useContext(UserContext);
 
   useEffect(() => {
     if (!user) return;

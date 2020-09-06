@@ -1,16 +1,18 @@
 import React from "react";
-import User from "../context/User";
-import Products from "../context/Products";
 import Banner from "./Banner";
 import UserPanel from "./UserPanel";
+import ProductsList from "./ProductsList";
 import UserProvider from "../providers/UserProvider";
+import ProductsProvider from "../providers/ProductsProvider";
 
 function App() {
   return (
     <UserProvider>
-      <UserPanel />
-      <Banner />
-      <Products />
+      <ProductsProvider>
+        <UserPanel />
+        <Banner />
+        <ProductsList />
+      </ProductsProvider>
     </UserProvider>
   );
 }
