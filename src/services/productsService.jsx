@@ -5,29 +5,28 @@ const headers = {
   Authorization: `Bearer ${API.AUTH_TOKEN}`,
 };
 
-export const getProducts = async () => {
-  try {
-    const response = await fetch(API.PRODUCTS, { headers });
-    const json = await response.json();
-    return json;
-  } catch (error) {
-    return alert(JSON.stringify(error));
-  }
+export const getProducts = () => {
+  return fetch(API.PRODUCTS, { headers })
+    .then((response) => {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+      return response;
+    })
+    .then((response) => response.json());
 };
 
-export const redeemProduct = async (id) => {
-  try {
-    console.log(id);
-    const response = await fetch(API.REDEEEM, {
-      headers,
-      method: "POST",
-      body: JSON.stringify({ productId: id }),
-    });
-    console.log("request", response);
-    const json = await response.json();
-    return json;
-  } catch (error) {
-    console.log("Error", error);
-    return alert(JSON.stringify(error));
-  }
+export const redeemProduct = (id) => {
+  return fetch(API.REDEEEM, {
+    headers,
+    method: "POST",
+    body: JSON.stringify({ productId: id }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+      return response;
+    })
+    .then((response) => response.json());
 };

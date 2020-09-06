@@ -6,25 +6,27 @@ const headers = {
 };
 
 export const getUser = async () => {
-  try {
-    const response = await fetch(API.USER, { headers });
-    const json = await response.json();
-    return json;
-  } catch (error) {
-    return alert(JSON.stringify(error));
-  }
+  return fetch(API.USER, { headers })
+    .then((response) => {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+      return response;
+    })
+    .then((response) => response.json());
 };
 
 export const addPoints = async (coins) => {
-  try {
-    const response = await fetch(API.ADD_POINTS, {
-      method: "POST",
-      body: JSON.stringify({ amount: coins }),
-      headers,
-    });
-    const json = await response.json();
-    return json;
-  } catch (error) {
-    return alert(JSON.stringify(error));
-  }
+  return fetch(API.ADD_POINTS, {
+    headers,
+    method: "POST",
+    body: JSON.stringify({ amount: coins }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+      return response;
+    })
+    .then((response) => response.json());
 };

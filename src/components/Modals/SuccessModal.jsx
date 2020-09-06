@@ -29,7 +29,7 @@ const SuccessModal = ({ isShowing, hide }) =>
               </div>
               <div className="content">
                 <img className="gif" src={success} alt="error" />
-                <div class="success">
+                <div className="success">
                   <h1>SUCCESS!</h1>
                   <span>Everything went ok!, enjoy your product</span>
                 </div>

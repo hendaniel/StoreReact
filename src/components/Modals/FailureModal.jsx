@@ -28,7 +28,7 @@ const FailureModal = ({ isShowing, hide }) =>
               </div>
               <div className="content">
                 <img className="gif" src={error} alt="error" />
-                <div class="error">
+                <div className="error">
                   <h1>ERROR!</h1>
                   <span>Something went wrong, try again</span>
                 </div>

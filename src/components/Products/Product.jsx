@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../providers/index";
 import { coin, buy } from "../../assets/index";
 import { SuccessModal, FailureModal } from "../Modals/index";
@@ -17,27 +17,36 @@ const Product = ({
 }) => {
   const user = useContext(UserContext);
 
-  const { isShowing, toggle } = useModal();
-
   useEffect(() => {
     if (!user) return;
   }, [user]);
+
+  const [error, setError] = useState(false);
+
+  const { isShowing, toggle } = useModal();
 
   const { points } = user;
 
   const canBuy = cost <= points;
 
-  const openBuyModal = () => {
-    redeemProduct(_id).then((res) => {
-      // toggle();
-      console.log(res);
-    });
+  const showModal = () => {
+    redeemProduct(_id)
+      .then((res) => {
+        toggle();
+      })
+      .catch((err) => {
+        setError(true);
+        toggle();
+      });
   };
 
   return (
     <div className="card">
-      <SuccessModal isShowing={isShowing} hide={toggle} />
-      {/* <FailureModal isShowing={isShowing} hide={toggle} /> */}
+      {error ? (
+        <FailureModal isShowing={isShowing} hide={toggle} />
+      ) : (
+        <SuccessModal isShowing={isShowing} hide={toggle} />
+      )}
 
       <div className="img" style={{ backgroundImage: `url("${url}")` }}></div>
       <div className="info">
@@ -53,7 +62,7 @@ const Product = ({
             <div className="action">
               <h3>{cost}</h3>
               <img src={coin} alt="coin" />
-              <button onClick={openBuyModal}>Redeem now</button>
+              <button onClick={showModal}>Redeem now</button>
             </div>
           </div>
         </>
