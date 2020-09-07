@@ -1,5 +1,4 @@
 import React from "react";
-import "./history.scss";
 
 const Product = ({
   item: {

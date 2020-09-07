@@ -4,7 +4,6 @@ import RedeemedProduct from "./RedeemedProduct";
 import FilterPanel from "../FilterPanel/FilterPanel";
 import { priceFilter } from "../../utils/index";
 import { HistoryContext } from "../../providers/index";
-import "./history.scss";
 
 const ITEMS_PER_PAGE = 16;
 
