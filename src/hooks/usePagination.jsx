@@ -23,6 +23,12 @@ const usePagination = (data, itemsPerPage) => {
     return data.slice(begin, end);
   };
 
-  return { next, prev, jump, currentData, currentPage, maxPage };
+  const currentAmount = () => {
+    const accumulate = itemsPerPage * (currentPage - 1);
+    const current = currentData().length;
+    return accumulate + current;
+  };
+
+  return { next, prev, jump, currentData, currentAmount, currentPage, maxPage };
 };
 export default usePagination;

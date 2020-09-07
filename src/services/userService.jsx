@@ -1,4 +1,4 @@
-import * as API from "../api/API";
+import * as API from "../Utils/API";
 
 const headers = {
   "Content-Type": "application/json",
