@@ -3,7 +3,8 @@ import { coin } from "../../assets/index";
 import { UserContext } from "../../providers/UserProvider";
 import { CoinsModal } from "../Modals/index";
 import { useModal } from "../../hooks/index";
-
+import { Switch, Route } from "react-router-dom";
+import ProductsList from "../Products/ProductsList";
 import "./user.scss";
 
 const UserPanel = () => {
@@ -22,6 +23,11 @@ const UserPanel = () => {
   const { name, points } = user;
   return (
     <>
+    <Switch>
+      <Route exact path="/" component={ProductsList} />
+      <Route exact path="/" component={ProductsList} />
+
+    </Switch>
       {coinsModal && (
         <CoinsModal isShowing={coinsModal} hide={toggleCoinsModal} />
       )}

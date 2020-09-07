@@ -1,6 +1,6 @@
 export const routes = [
   {
-    path: "/home",
+    path: "/",
     linkname: "Home",
   },
   {
