@@ -44,7 +44,7 @@
   background: #43a764;
 }
 .coins-header {
-  background: #c7aa0a;
+  background: #e0ca49;
 }
 
 .modal-close-button {
@@ -85,10 +85,11 @@ button {
 
   .coins {
     cursor: pointer;
-    font-size: 20px;
+    font-size: 30px;
     margin-top: 10px;
+    background-color: transparent;
     outline: none;
-    color: #c7aa0a;
+    color: #e0ca49;
   }
 
   .gif {

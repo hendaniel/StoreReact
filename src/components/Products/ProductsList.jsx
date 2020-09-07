@@ -11,28 +11,21 @@ const ITEMS_PER_PAGE = 16;
 const ProductsList = () => {
   const { products, setProductResponse } = useContext(ProductsContext);
 
+  const [filteredProducts, setProducts] = useState([]);
+
   useEffect(() => {
     if (!products) return;
+    setProducts(products);
   }, [products]);
 
-  const [filteredProducts, setProducts] = useState(products);
-
-  const { next, prev, currentData, currentAmount } = usePagination(
+  const { next, prev, currentData, currentAmount, jump } = usePagination(
     filteredProducts,
     ITEMS_PER_PAGE
   );
 
-  const onPrev = () => {
-    prev();
-    window.scrollTo(0, 0);
-  };
-  const onNext = () => {
-    next();
-    window.scrollTo(0, 0);
-  };
-
   const handleFilter = (event) => {
     setProducts(products.filter(priceFilter(event.target.value)));
+    jump(1);
   };
 
   if (filteredProducts.length) {
@@ -40,7 +33,7 @@ const ProductsList = () => {
       <>
         <FilterPanel
           currentAmount={currentAmount()}
-          totalAmount={products.length}
+          totalAmount={filteredProducts.length}
           onFilter={handleFilter}
         />
         <div className="cards">
@@ -53,8 +46,8 @@ const ProductsList = () => {
         <div className="container-pagination">
           <div className="pagination">
             <ul>
-              <button onClick={onPrev}>Previous</button>
-              <button onClick={onNext}>Next</button>
+              <button onClick={() => prev()}>Previous</button>
+              <button onClick={() => next()}>Next</button>
             </ul>
           </div>
         </div>
