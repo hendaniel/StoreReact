@@ -5,7 +5,7 @@ const headers = {
   Authorization: `Bearer ${API.AUTH_TOKEN}`,
 };
 
-export const getUser = async () => {
+export const getUser = () => {
   return fetch(API.USER, { headers })
     .then((response) => {
       if (!response.ok) {
@@ -16,7 +16,7 @@ export const getUser = async () => {
     .then((response) => response.json());
 };
 
-export const addPoints = async (coins) => {
+export const addPoints = (coins) => {
   return fetch(API.ADD_POINTS, {
     headers,
     method: "POST",

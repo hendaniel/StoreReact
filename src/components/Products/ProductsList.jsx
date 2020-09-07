@@ -5,7 +5,7 @@ import { ProductsContext } from "../../providers/index";
 import "./products.scss";
 
 const ProductsList = () => {
-  const products = useContext(ProductsContext);
+  const { products, setProductResponse } = useContext(ProductsContext);
 
   useEffect(() => {
     if (!products) return;
@@ -18,7 +18,7 @@ const ProductsList = () => {
       <>
         <div className="cards">
           {currentData().map((item, key) => {
-            return <Product item={item} key={key}></Product>;
+            return <Product item={item} key={key} onFetch={setProductResponse} />;
           })}
         </div>
         <div className="container-pagination">

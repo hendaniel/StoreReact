@@ -15,8 +15,9 @@ const Product = ({
     cost,
     img: { url },
   },
+  onFetch,
 }) => {
-  const user = useContext(UserContext);
+  const { user, setUserResponse } = useContext(UserContext);
 
   useEffect(() => {
     if (!user) return;
@@ -30,12 +31,14 @@ const Product = ({
 
   const { points } = user;
 
-  const canBuy = cost >= points;
+  const canBuy = cost <= points;
 
   const showResponseModal = () => {
     redeemProduct(_id)
       .then((res) => {
         toggleSuccessModal();
+        setUserResponse(res);
+        onFetch(res);
       })
       .catch((err) => {
         toggleErrorModal();

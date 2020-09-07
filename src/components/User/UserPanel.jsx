@@ -4,7 +4,7 @@ import { UserContext } from "../../providers/UserProvider";
 import "./user.scss";
 
 const UserPanel = () => {
-  const user = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     if (!user) return;
