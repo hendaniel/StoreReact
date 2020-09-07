@@ -9,14 +9,14 @@ import "./history.scss";
 const ITEMS_PER_PAGE = 16;
 
 const ProductsHistory = () => {
-  const { products } = useContext(HistoryContext);
+  const { history } = useContext(HistoryContext);
 
-  const [filteredProducts, setProducts] = useState([]);
+  const [filteredProducts, setHistory] = useState([]);
 
   useEffect(() => {
-    if (!products) return;
-    setProducts(products);
-  }, [products]);
+    if (!history) return;
+    setHistory(history);
+  }, [history]);
 
   const { next, prev, currentData, currentAmount, jump } = usePagination(
     filteredProducts,
@@ -24,7 +24,7 @@ const ProductsHistory = () => {
   );
 
   const handleFilter = (event) => {
-    setProducts(products.filter(priceFilter(event.target.value)));
+    setHistory(history.filter(priceFilter(event.target.value)));
     jump(1);
   };
 

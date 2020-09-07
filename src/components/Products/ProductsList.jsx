@@ -39,7 +39,11 @@ const ProductsList = () => {
         <div className="cards">
           {currentData().map((item, key) => {
             return (
-              <Product item={item} key={key} onFetch={setProductResponse} />
+              <Product
+                item={item}
+                key={key}
+                setProductResponse={setProductResponse}
+              />
             );
           })}
         </div>

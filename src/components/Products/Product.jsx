@@ -1,10 +1,9 @@
 import React, { useContext, useEffect } from "react";
-import { UserContext } from "../../providers/index";
+import { UserContext, HistoryContext } from "../../providers/index";
 import { coin, buy } from "../../assets/index";
 import { SuccessModal, FailureModal, CoinsModal } from "../Modals/index";
 import { useModal } from "../../hooks/index";
 import { redeemProduct } from "../../services/productsService";
-
 import "./products.scss";
 
 const Product = ({
@@ -15,9 +14,10 @@ const Product = ({
     cost,
     img: { url },
   },
-  onFetch,
+  setProductResponse,
 }) => {
   const { user, setUserResponse } = useContext(UserContext);
+  const { setHistoryResponse } = useContext(HistoryContext);
 
   useEffect(() => {
     if (!user) return;
@@ -38,7 +38,8 @@ const Product = ({
       .then((res) => {
         toggleSuccessModal();
         setUserResponse(res);
-        onFetch(res);
+        setHistoryResponse(res);
+        setProductResponse(res);
       })
       .catch((err) => {
         toggleErrorModal();

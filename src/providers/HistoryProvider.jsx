@@ -4,18 +4,17 @@ import { getHistory } from "../services/userService";
 export const HistoryContext = React.createContext();
 
 const HistoryProvider = ({ children }) => {
-  const [products, setProducts] = useState({});
+  const [history, setHistory] = useState({});
 
-  const [productResponse, setProductResponse] = useState([]);
+  const [historyResponse, setHistoryResponse] = useState([]);
 
   useEffect(() => {
     getHistory().then((products) => {
-      setProducts(products);
+      setHistory(products);
     });
-  }, [productResponse]);
-
+  }, [historyResponse]);
   return (
-    <HistoryContext.Provider value={{ products, setProductResponse }}>
+    <HistoryContext.Provider value={{ history, setHistoryResponse }}>
       {children}
     </HistoryContext.Provider>
   );
