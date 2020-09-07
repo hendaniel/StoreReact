@@ -30,3 +30,14 @@ export const addPoints = (coins) => {
     })
     .then((response) => response.json());
 };
+
+export const getHistory = () => {
+  return fetch(API.HISTORY, { headers })
+    .then((response) => {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+      return response;
+    })
+    .then((response) => response.json());
+};
