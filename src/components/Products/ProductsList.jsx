@@ -13,6 +13,15 @@ const ProductsList = () => {
 
   const { next, prev, currentData } = usePagination(products, 16);
 
+  const onPrev = () => {
+    prev();
+    window.scrollTo(0, 0);
+  };
+  const onNext = () => {
+    next();
+    window.scrollTo(0, 0);
+  };
+
   if (products.length > 0) {
     return (
       <>
@@ -26,22 +35,8 @@ const ProductsList = () => {
         <div className="container-pagination">
           <div className="pagination">
             <ul>
-              <button
-                onClick={() => {
-                  prev();
-                  window.scrollTo(0, 0);
-                }}
-              >
-                Previous
-              </button>
-              <button
-                onClick={() => {
-                  next();
-                  window.scrollTo(0, 0);
-                }}
-              >
-                Next
-              </button>
+              <button onClick={onPrev}>Previous</button>
+              <button onClick={onNext}>Next</button>
             </ul>
           </div>
         </div>
