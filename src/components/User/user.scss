@@ -1,6 +1,5 @@
 .user-panel {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   background-color: #ffffff;
   width: 100%;
@@ -13,22 +12,46 @@
   font-weight: 500;
   color: #868686;
 
-  .coins-user {
-    margin-right: 10px;
-    border-radius: 100px;
+  .profile {
+    width: 50%;
     display: flex;
-    justify-content: center;
-    background-color: #ededed;
-    width: 110px;
-    span {
-      display: inline-flex;
+    justify-content: flex-end;
+    .name {
+      display: flex;
       align-items: center;
-      color: gray;
+    }
+    .coins-user {
+      margin-right: 10px;
+      border-radius: 100px;
+      display: flex;
+      justify-content: center;
+      background-color: #ededed;
+      width: 110px;
+      span {
+        display: inline-flex;
+        align-items: center;
+        color: gray;
+      }
+    }
+    img {
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
-  img {
-    &:hover {
-      cursor: pointer;
+
+  .navigation {
+    width: 50%;
+    display: flex;
+    ul > li {
+      display: inline-block;
+      margin-left: 40px;
     }
+  }
+  .nav-item {
+    color: gray;
+  }
+  .selected-nav {
+    color: #45d2f7;
   }
 }

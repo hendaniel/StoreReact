@@ -27,6 +27,7 @@ const UserPanel = () => {
     return (
       <li key={key}>
         <NavLink
+          exact
           className="nav-item"
           to={route.path}
           activeClassName="selected-nav"
@@ -38,15 +39,15 @@ const UserPanel = () => {
   });
   return (
     <>
-      <div className="profile">
-        {coinsModal && (
-          <CoinsModal isShowing={coinsModal} hide={toggleCoinsModal} />
-        )}
+      {coinsModal && (
+        <CoinsModal isShowing={coinsModal} hide={toggleCoinsModal} />
+      )}
+      <div className="user-panel">
         <div className="navigation">
           <ul className="options">{links}</ul>
         </div>
-        <div className="user-panel">
-          <div>{name}</div>
+        <div className="profile">
+          <div className="name">{name}</div>
           <div className="coins-user">
             <img src={coin} onClick={openCoinsModal} alt="Coins" />
             <span className="points">{points}</span>
