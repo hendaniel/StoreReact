@@ -3,6 +3,7 @@ import { usePagination } from "../../hooks/index";
 import { ProductsContext } from "../../providers/index";
 import Product from "./Product";
 import FilterPanel from "./FilterPanel";
+import { priceFilter } from "../../utils/index";
 import "./products.scss";
 
 const ITEMS_PER_PAGE = 16;
@@ -10,14 +11,14 @@ const ITEMS_PER_PAGE = 16;
 const ProductsList = () => {
   const { products, setProductResponse } = useContext(ProductsContext);
 
-  const [filter, setFilter] = useState(0);
-
   useEffect(() => {
     if (!products) return;
   }, [products]);
 
+  const [filteredProducts, setProducts] = useState(products);
+
   const { next, prev, currentData, currentAmount } = usePagination(
-    products,
+    filteredProducts,
     ITEMS_PER_PAGE
   );
 
@@ -31,10 +32,10 @@ const ProductsList = () => {
   };
 
   const handleFilter = (event) => {
-    console.log(event.target.value);
+    setProducts(products.filter(priceFilter(event.target.value)));
   };
 
-  if (products.length) {
+  if (filteredProducts.length) {
     return (
       <>
         <FilterPanel
@@ -60,6 +61,10 @@ const ProductsList = () => {
       </>
     );
   }
-  return <div></div>;
+  return (
+    <div className="empty">
+      <h1>No hay productos</h1>
+    </div>
+  );
 };
 export default ProductsList;

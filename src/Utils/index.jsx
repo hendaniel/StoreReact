@@ -1,4 +1,4 @@
-const priceFilter = (cost) => {
+export const priceFilter = (cost) => {
   return (product) => {
     switch (cost) {
       case 1:
