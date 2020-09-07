@@ -18,14 +18,30 @@ const ProductsList = () => {
       <>
         <div className="cards">
           {currentData().map((item, key) => {
-            return <Product item={item} key={key} onFetch={setProductResponse} />;
+            return (
+              <Product item={item} key={key} onFetch={setProductResponse} />
+            );
           })}
         </div>
         <div className="container-pagination">
           <div className="pagination">
             <ul>
-              <button onClick={() => prev()}>Previous</button>
-              <button onClick={() => next()}>Next</button>
+              <button
+                onClick={() => {
+                  prev();
+                  window.scrollTo(0, 0);
+                }}
+              >
+                Previous
+              </button>
+              <button
+                onClick={() => {
+                  next();
+                  window.scrollTo(0, 0);
+                }}
+              >
+                Next
+              </button>
             </ul>
           </div>
         </div>

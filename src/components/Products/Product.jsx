@@ -90,7 +90,7 @@ const Product = ({
             style={{ backgroundColor: "#92a2a7da" }}
           >
             <div className="action">
-              <h3>{cost - (points | 0)}</h3>
+              <h3>{cost}</h3>
               <img src={coin} alt="coin" />
               <button onClick={showCoinsModal}>Get more coins</button>
             </div>
