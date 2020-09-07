@@ -1,5 +1,5 @@
 import React from "react";
-import "./products.scss";
+import "./filter.scss";
 
 const optionsData = {
   price: {

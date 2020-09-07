@@ -2,7 +2,7 @@ import React, { useEffect, useContext, useState } from "react";
 import { usePagination } from "../../hooks/index";
 import { ProductsContext } from "../../providers/index";
 import Product from "./Product";
-import FilterPanel from "./FilterPanel";
+import FilterPanel from "../FilterPanel/FilterPanel";
 import { priceFilter } from "../../utils/index";
 import "./products.scss";
 

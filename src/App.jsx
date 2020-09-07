@@ -1,17 +1,20 @@
 import React from "react";
 import Banner from "./components/Banner/Banner";
 import UserPanel from "./components/User/UserPanel";
-import ProductsList from "./components/Products/ProductsList";
 import UserProvider from "./providers/UserProvider";
 import ProductsProvider from "./providers/ProductsProvider";
+import HistoryProvider from "./providers/HistoryProvider";
+import Navigation from "./components/User/Navigation";
 
 function App() {
   return (
     <UserProvider>
       <ProductsProvider>
-        <UserPanel />
-        <Banner />
-        <ProductsList />
+        <HistoryProvider>
+          <UserPanel />
+          <Banner />
+          <Navigation />
+        </HistoryProvider>
       </ProductsProvider>
     </UserProvider>
   );

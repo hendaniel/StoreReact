@@ -1,4 +1,5 @@
 import { ProductsContext } from "./ProductsProvider";
 import { UserContext } from "./UserProvider";
+import { HistoryContext } from "./HistoryProvider";
 
-export { ProductsContext, UserContext };
+export { ProductsContext, UserContext, HistoryContext };

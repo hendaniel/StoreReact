@@ -1,15 +1,15 @@
 import React, { useEffect, useContext, useState } from "react";
 import { usePagination } from "../../hooks/index";
-import { ProductsContext } from "../../providers/index";
 import RedeemedProduct from "./RedeemedProduct";
-import FilterPanel from "./FilterPanel";
+import FilterPanel from "../FilterPanel/FilterPanel";
 import { priceFilter } from "../../utils/index";
-import "./products.scss";
+import { HistoryContext } from "../../providers/index";
+import "./history.scss";
 
 const ITEMS_PER_PAGE = 16;
 
-const ListHistory = () => {
-  const { products, setProductResponse } = useContext(ProductsContext);
+const ProductsHistory = () => {
+  const { products } = useContext(HistoryContext);
 
   const [filteredProducts, setProducts] = useState([]);
 
@@ -38,9 +38,7 @@ const ListHistory = () => {
         />
         <div className="cards">
           {currentData().map((item, key) => {
-            return (
-              <RedeemedProduct item={item} key={key} />
-            );
+            return <RedeemedProduct item={item} key={key} />;
           })}
         </div>
         <div className="container-pagination">
@@ -60,4 +58,4 @@ const ListHistory = () => {
     </div>
   );
 };
-export default ListHistory;
+export default ProductsHistory;

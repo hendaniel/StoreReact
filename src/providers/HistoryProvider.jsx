@@ -6,7 +6,7 @@ export const HistoryContext = React.createContext();
 const HistoryProvider = ({ children }) => {
   const [products, setProducts] = useState({});
 
-  const [productResponse, setProductResponse] = useState({});
+  const [productResponse, setProductResponse] = useState([]);
 
   useEffect(() => {
     getHistory().then((products) => {

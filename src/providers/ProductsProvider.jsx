@@ -6,7 +6,7 @@ export const ProductsContext = React.createContext();
 const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState({});
 
-  const [productResponse, setProductResponse] = useState({});
+  const [productResponse, setProductResponse] = useState([]);
 
   useEffect(() => {
     getProducts().then((products) => {

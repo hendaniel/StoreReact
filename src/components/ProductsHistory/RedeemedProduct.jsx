@@ -1,6 +1,5 @@
 import React from "react";
-
-import "./products.scss";
+import "./history.scss";
 
 const Product = ({
   item: {
