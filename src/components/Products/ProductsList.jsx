@@ -28,40 +28,44 @@ const ProductsList = () => {
     jump(1);
   };
 
-  if (filteredProducts.length) {
-    return (
-      <>
-        <FilterPanel
-          currentAmount={currentAmount()}
-          totalAmount={filteredProducts.length}
-          onFilter={handleFilter}
-        />
-        <div className="cards">
-          {currentData().map((item, key) => {
-            return (
-              <Product
-                item={item}
-                key={key}
-                setProductResponse={setProductResponse}
-              />
-            );
-          })}
-        </div>
-        <div className="container-pagination">
-          <div className="pagination">
-            <ul>
-              <button onClick={() => prev()}>Previous</button>
-              <button onClick={() => next()}>Next</button>
-            </ul>
-          </div>
-        </div>
-      </>
-    );
-  }
   return (
-    <div className="empty">
-      <h1>No hay productos</h1>
-    </div>
+    <>
+      {filteredProducts.length ? (
+        <>
+          <FilterPanel
+            currentAmount={currentAmount()}
+            totalAmount={filteredProducts.length}
+            onFilter={handleFilter}
+          />
+          <div className="cards">
+            {currentData().map((item, key) => {
+              return (
+                <Product
+                  item={item}
+                  key={key}
+                  setProductResponse={setProductResponse}
+                />
+              );
+            })}
+          </div>
+          <div className="container-pagination">
+            <div className="pagination">
+              <ul>
+                <button onClick={() => prev()}>Previous</button>
+                <button onClick={() => next()}>Next</button>
+              </ul>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <FilterPanel onFilter={handleFilter} />
+          <div className="empty">
+            <h1>No hay productos</h1>
+          </div>
+        </>
+      )}
+    </>
   );
 };
 export default ProductsList;

@@ -12,7 +12,7 @@ const optionsData = {
   },
 };
 
-const FilterPanel = ({ currentAmount, totalAmount, onFilter }) => {
+const FilterPanel = ({ currentAmount = 0, totalAmount = 0, onFilter }) => {
   return (
     <>
       <div className="filter-container">

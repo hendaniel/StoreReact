@@ -15,6 +15,7 @@ const Product = ({
       <div className="info">
         <span className="category">{category}</span>
         <h3 className="title">{name}</h3>
+        <span className="category">{cost} coins</span>
       </div>
     </div>
   );
