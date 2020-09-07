@@ -36,10 +36,10 @@ const Product = ({
   const showResponseModal = () => {
     redeemProduct(_id)
       .then((res) => {
-        toggleSuccessModal();
         setUserResponse(res);
         setHistoryResponse(res);
         setProductResponse(res);
+        toggleSuccessModal();
       })
       .catch((err) => {
         toggleErrorModal();
