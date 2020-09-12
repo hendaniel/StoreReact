@@ -1,4 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Info
+ 
+Esta aplicación web esta deployada en https://hendaniel.github.io/StoreReact/#/ , es una aplicación construida en React, con uso de Hooks para manejo de estados y Hooks personalizados, consume el api de https://aerolabchallenge.docs.apiary.io/#reference , donde se usa un token personal.
 
 ## Available Scripts
 
