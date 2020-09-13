@@ -1,7 +1,7 @@
 
 ## Info
  
-Esta aplicación web esta deployada en https://hendaniel.github.io/StoreReact/#/ , es una aplicación construida en React, con uso de Hooks para manejo de estados y Hooks personalizados, consume el api de https://aerolabchallenge.docs.apiary.io/#reference , donde se usa un token personal.
+Esta aplicación web esta deployada en https://hendaniel.github.io/store-react/#/ , es una aplicación construida en React, con uso de Hooks para manejo de estados y Hooks personalizados, consume el api de https://aerolabchallenge.docs.apiary.io/#reference , donde se usa un token personal.
 
 ## Available Scripts
 
